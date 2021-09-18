@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+
+type styleProps = {
+  isFocused: boolean;
+  isFilled: boolean;
+}
+
+export const Container = styled.div<styleProps>`
   display: flex;
   align-items: center;
 
@@ -22,6 +28,7 @@ export const Container = styled.div`
   }
 
   ${props =>
+    //@ts-ignore
     props.isFocused &&
     css`
       color: #ff9000;
@@ -29,6 +36,7 @@ export const Container = styled.div`
     `}
 
   ${props =>
+      //@ts-ignore
     props.isFilled &&
     css`
       color: #ff9000;
